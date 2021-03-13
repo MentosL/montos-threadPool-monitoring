@@ -147,7 +147,10 @@ public class CustomThreadPool extends ThreadPoolExecutor {
      * @return
      * */
     public float getAverageCostTime() {
-        return totalCostTime.get() / totalTasks.get();
+        if (totalCostTime.get()!=0){
+            return totalCostTime.get() / totalTasks.get();
+        }
+        return  0f;
     }
 
     /**

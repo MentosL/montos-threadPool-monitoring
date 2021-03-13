@@ -1,6 +1,7 @@
 package xyz.lushun.threadPool.adaptor;
 
 import com.sun.jdmk.comm.HtmlAdaptorServer;
+import xyz.lushun.threadPool.util.MBeanServerUtils;
 
 import javax.management.MalformedObjectNameException;
 import javax.management.ObjectName;
@@ -9,14 +10,14 @@ import javax.management.ObjectName;
  * @author Montos
  * @create 2021/3/13 5:55 下午
  */
-public class HtmlMBeanAdaptor extends MBeanAdaptor{
+public class HtmlMBeanAdaptor {
 
-    private  final HtmlAdaptorServer adapter = new HtmlAdaptorServer();
+    private static final String PORT = "8082";
+    private static HtmlAdaptorServer adapter = new HtmlAdaptorServer();
 
-    @Override
-    public void start() {
+    public static void start() {
         try {
-            registerMBean(adapter, new ObjectName(String.format("HtmlAgent:name=html-adapter, port=%s", "8888")));
+            MBeanServerUtils.registerMBean(adapter, new ObjectName(String.format("HtmlAgent:name=html-adapter, port=%s", PORT)));
         } catch (MalformedObjectNameException e) {
             e.printStackTrace();
         }

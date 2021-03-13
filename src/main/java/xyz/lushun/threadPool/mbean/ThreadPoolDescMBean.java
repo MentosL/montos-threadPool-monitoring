@@ -5,7 +5,7 @@ package xyz.lushun.threadPool.mbean;
  * @create 2021/3/13 5:28 下午
  *  统一接口
  */
-public interface ThreadPoolMBean  {
+public interface ThreadPoolDescMBean {
 
 
     /**

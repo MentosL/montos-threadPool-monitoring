@@ -7,11 +7,11 @@ import xyz.lushun.threadPool.custom.CustomThreadPool;
  * @create 2021/3/13 5:30 下午
  * 默认Mbean
  */
-public class DefaultThreadPool implements ThreadPoolMBean{
+public class ThreadPoolDesc implements ThreadPoolDescMBean {
 
     private  CustomThreadPool customThreadPool;
 
-    public DefaultThreadPool(CustomThreadPool customThreadPool) {
+    public ThreadPoolDesc(CustomThreadPool customThreadPool) {
         this.customThreadPool =  customThreadPool;
     }
 
